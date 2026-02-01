@@ -47,8 +47,11 @@ jobs:
       - name: Install Jekyll dependencies
         run: npm run jekyll:install
 
-      - name: Build site
-        run: npm start
+      # - name: Build site
+      #   run: npm start
+      - name: Build site (NO server)
+        run: bundle exec jekyll build
+
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
