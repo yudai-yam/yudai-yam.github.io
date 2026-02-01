@@ -6,20 +6,22 @@
     "jekyll:install": "bundle config set --local path 'vendor/bundle' && BUNDLE_GEMFILE=site/Gemfile bundle install",
     "build": "BUNDLE_GEMFILE=site/Gemfile bundle exec jekyll build --source site",
     "start": "BUNDLE_GEMFILE=site/Gemfile bundle exec jekyll serve --source site --port 6060 --trace --unpublished",
-    "update-bookshop": "npx @bookshop/up@latest"
+    "update-bookshop": "npx @bookshop/up@latest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CloudCannon/vonge-jekyll-bookshop-template.git"
+    "url": "git+https://github.com/yudai-yam/yudai-yam.github.io.git"
   },
   "author": "CloudCannon",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/CloudCannon/vonge-jekyll-bookshop-template/issues"
-  },
-  "homepage": "https://github.com/CloudCannon/vonge-jekyll-bookshop-template#readme",
+  "homepage": "https://github.com/yudai-yam/yudai-yam.github.io",
   "dependencies": {
-    "@bookshop/jekyll-engine": "3.16.5",
-    "@bookshop/generate": "3.16.5"
+    "@bookshop/generate": "3.16.5",
+    "@bookshop/jekyll-engine": "3.16.5"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
